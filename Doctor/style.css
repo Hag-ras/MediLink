@@ -1,0 +1,144 @@
+/* Global Definitions */
+:root {
+  --primary-color: #007bff; /*Buttons, links, active states*/
+  --soft-white: #f9fafb; /*Backgrounds, form containers*/
+  --slate-gray: #4b5563; /*Text (main)*/
+  --accent-teal: #14b8a6; /*Highlighted info, CTA sections (for doctors)*/
+  --peach: #fda29b; /*Highlighted info, CTA sections (for patients)*/
+  --sky-blue: #e0f2fe; /*Card backgrounds, info boxes*/
+  --charcoal-black: #111827; /*Headers, footers*/
+  --soft-gray: #e5e7eb; /*Borders, dividers, muted text*/
+}
+/* html,
+    body {
+      height: 100%;
+    } */
+body {
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+  background-color: var(--sky-blue);
+
+  color: var(--charcoal-black);
+  transition: ease;
+  text-transform: capitalize;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* header */
+.header {
+  width: 101%;
+  height: 80px;
+  margin-left: -20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--charcoal-black);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 25%;
+  height: 100%;
+  display: flex;
+}
+.header .logo-pic {
+  width: 70px;
+}
+.header .logo-name {
+  color: #fff;
+  font-size: 25px;
+}
+.header .links li {
+  display: inline-block;
+  margin-right: 25px;
+}
+.header li a {
+  text-decoration: none;
+  color: #fff;
+}
+.header li a:hover {
+  color: var(--sky-blue);
+  transfom: scale(1.1);
+  letter-spacing: 1px;
+}
+
+/*upper part */
+.upper {
+  position: relative;
+  top: 70px;
+  width: 100%;
+  height: calc(44% - 35px);
+}
+.upper .container {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.upper .dashboard {
+  grid-row: span 2;
+  grid-column: 1 / span 1;
+  flex-grow: 1;
+  width: 800px;
+  height: 400px;
+  min-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.upper .dashboard-heading {
+  font-size: 50px;
+  color: var(--charcoal-black);
+}
+.upper .appoint {
+  background-color: var(--accent-teal);
+  width: 600px;
+  height: 70%;
+  flex-shrink: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upper .new-appoint {
+  width: 250px;
+  height: 50px;
+  background-color: var(--sky-blue);
+  border-radius: 26px;
+  border: none;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.upper .appointments {
+  grid-area: 2/3;
+}
+.upper .patients {
+  grid-area: 3/4;
+}
